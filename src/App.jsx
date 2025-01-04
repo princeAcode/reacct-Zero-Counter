@@ -2,17 +2,30 @@ import { useState } from 'react'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(15)
 
-  const name = "Prince"
+  const addValue  =() => {
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter((prevCounter) => prevCounter + 1)
+    setCounter((prevCounter) => prevCounter + 1)
+  } 
+  const removeValue = () => {
+    
+    setCounter(counter - 1)
+  }
 
   return (
     <>
-      <h1>Hello React this is {name} </h1>
-    <h2>This is a count app</h2>
-    <button>Add button</button>
-    <button>Remove button</button>
-    <p>footer: </p>
+      <h1>Hello React this is {count} </h1>
+    <h2>This is a count app: {count}</h2>
+    <button
+      onClick={addValue}
+      >Add value</button> {" "}
+      <button
+      onClick={removeValue}
+      >remove value</button>
+      <p>footer: {counter}</p>
     </>
   )
 }
